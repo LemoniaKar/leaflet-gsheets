@@ -13,6 +13,20 @@
    "location": "Bozeman",
    "level": "Local"
  },
+  {
+   "lat": 37.997847,
+   "long": 23.710393,
+   "category": "Public Tobaco Factory",
+   "location": "Athens",
+   "level": "Local"
+ },
+   {
+   "lat": 38.00534,
+   "long": 23.70106,
+   "category": "Hospital",
+   "location": "Peristeri",
+   "level": "Local"
+ },
  {
    "lat": 34,
    "long": -108,
