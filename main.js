@@ -9,9 +9,9 @@
 // these URLs come from Google Sheets 'shareable link' form
 // the first is the geometry layer and the second the points
 let geomURL = 
-  "https://docs.google.com/spreadsheets/d/1BkPyYVwgPQxWv9VtXU6912lG5QKAYorv-dOxa0bt2U4/edit?usp=sharing";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vTVRq56ldaCsi2LJJHn1kOnqw2MqHMBxN87-2udQ395qA0VtnRWa6YatgTGgTnmhmFnvAPZIb0Pl2m0/pub?output=csv";
 let pointsURL =
-  "https://docs.google.com/spreadsheets/d/1BkPyYVwgPQxWv9VtXU6912lG5QKAYorv-dOxa0bt2U4/edit?usp=sharing";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vTxb8rx-qV7KRqI3iimvJE9ddNLcu-aXsKMfbuVI92T8Eg2IJLEiulWZ2nF9tXy3ABlJHR9wkst7Oms/pub?output=csv";
 
 window.addEventListener("DOMContentLoaded", init);
 
