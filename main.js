@@ -23,8 +23,8 @@ let panelID = "my-info-panel";
  * init() is called when the page has loaded
  */
 function init() {
-  // Create a new Leaflet map centered on the continental US
-  map = L.map("map").setView([51.5, -0.1], 14);
+  // Create a new Leaflet map centered on the Peristeri Athens
+  map = L.map("map").setView([38.00518, 23.70110], 14);     
 
   // This is the Carto Positron basemap
   L.tileLayer(
@@ -166,8 +166,8 @@ function addPoints(data) {
     }
     marker.addTo(pointGroupLayer);
 
-    // UNCOMMENT THIS LINE TO USE POPUPS
-    //marker.bindPopup('<h2>' + data[row].name + '</h2>There's a ' + data[row].description + ' here');
+    // UNCOMMENT THIS LINE TO USE POPUPS - ΕΜΦΑΝΙΣΗ ΠΛΗΡΟΦΟΡΙΩΝ
+    marker.bindPopup('<h2>' + data[row].name + '</h2>There's a ' + data[row].description + ' here');
 
     // COMMENT THE NEXT GROUP OF LINES TO DISABLE SIDEBAR FOR THE MARKERS
     marker.feature = {
