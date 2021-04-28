@@ -8,6 +8,7 @@
 // PASTE YOUR URLs HERE
 // these URLs come from Google Sheets 'shareable link' form
 // the first is the geometry layer and the second the points
+//τα δημόσια url των σημείων που πρόσθεσα
 let geomURL = 
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vTVRq56ldaCsi2LJJHn1kOnqw2MqHMBxN87-2udQ395qA0VtnRWa6YatgTGgTnmhmFnvAPZIb0Pl2m0/pub?output=csv";
 let pointsURL =
@@ -24,9 +25,31 @@ let panelID = "my-info-panel";
  */
 function init() {
   // Create a new Leaflet map centered on the Peristeri Athens
-  map = L.map("map").setView([38.00518, 23.70110], 14);     
+ map = L.map("map").setView([38.00518, 23.70110], 14);     
+  
 
+  map.locate({setView: true, maxZoom: 16});
+  
+  function onLocationFound(e) {
+    var radius = e.accuracy;
+
+    L.marker(e.latlng).addTo(map)
+        .bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+    L.circle(e.latlng, radius).addTo(map);
+}
+
+  //show error αν δεν βρεθεί η τοποθεσία
+map.on('locationfound', onLocationFound);
+  function onLocationError(e) {
+    alert(e.message);
+}
+
+map.on('locationerror', onLocationError);
+  
+  
   // This is the Carto Positron basemap
+  /*
   L.tileLayer(
     "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png",
     {
@@ -36,7 +59,7 @@ function init() {
       maxZoom: 19,
     }
   ).addTo(map);
-
+*/
   sidebar = L.control
     .sidebar({
       container: "sidebar",
